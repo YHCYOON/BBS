@@ -12,6 +12,7 @@
 	<title>JSP 게시판 웹사이트</title>
 </head>
 <body>
+	<!-- navbar 부분 -->
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -40,6 +41,7 @@
 		</div>
 	</nav>
 
+	<!-- container 부분 -->
 	<div class="container">
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">

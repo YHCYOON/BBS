@@ -14,10 +14,13 @@
 </head>
 <body>
 	<%
+		// 로그인이 되어있으면 userID에 세션값 저장 
+		// 속성 name이 UserID인 속성 value가 있으면 userID에 Object값으로 리턴한 속성 value를 String으로 형변환하여 userID에 저장 
 		String userID = null;
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
+		// userID 값이 있으면 이미 로그인이 되어있으므로 main 페이지로 이동
 		if(userID != null){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -25,7 +28,7 @@
 			script.println("location.href = 'main.jsp'");
 			script.println("</script>");
 		}
-		UserDAO userDao = new UserDAO();
+		UserDAO userDao = new UserDAO();		// UserDAO 객체 호출
 		int result = userDao.login(user.getUserID(), user.getUserPassword());
 		if (result ==1){
 			session.setAttribute("userID", user.getUserID());
